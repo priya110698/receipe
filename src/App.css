@@ -1,0 +1,113 @@
+
+@font-face {
+  font-family: 'Metropolis';
+  src: local('Metropolis'), url(./assets/metropolis/Metropolis-Black.otf) format('otf');
+  src: local('Metropolis'), url(./assets/metropolis/Metropolis-BlackItalic.otf) format('otf');
+  src: local('Metropolis'), url(./assets/metropolis/Metropolis-BoldItalic.otf) format('otf');
+}
+body{
+  font-family: 'Metropolis';
+ 
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cardImg {
+  width: 100%;
+}
+
+.card {
+  cursor: pointer;
+  width: 23%;
+  padding: 0px;
+  margin: 20px 10px;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  position: relative;
+}
+
+
+.card div p {
+  padding: 10px;
+  margin: 0px;
+  width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'Metropolis-BlackItalic';
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.card img {
+  border-radius: 10px 10px 0px 0px;
+    position: relative;
+    top: 0px;
+}
+
+.flex {
+  display: flex;
+  
+}
+
+.card .flex p img {
+  border-radius: 0px;
+  position: relative;
+  top: 0px;
+  width: 22px;
+}
+
+.card .flex p{
+  width: 20%;
+  text-align: right;
+}
+.card .flex p:first-child {
+  width: 80%;
+  text-align: left;
+}
+
+.cards {
+  display: flex;
+  /* width: 100%; */
+  /* overflow: hidden; */
+  flex-wrap: wrap;
+}
+
+.desc {
+  padding: 10px;
+}
+
+label.label {
+  position: absolute;
+  right: 0;
+  z-index: 9;
+  top: 0;
+  background: #000A0A;
+  padding: 10px 20px;
+  border-radius: 0px 10px;
+  color: #fff;
+  font-size: 17px;
+  text-transform: uppercase;
+}
+
+/* Media Query */
+@media (min-width:300px) and (max-width:798px)
+{
+  .card {
+    cursor: pointer;
+    width: 100%;
+    padding: 0px;
+    margin: 20px 0px;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    position: relative;
+}
+}
