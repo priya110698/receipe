@@ -2,6 +2,7 @@ import React , { Suspense, lazy } from 'react';
 import './App.css';
 import Card from './components/card';
 import Detail from './components/cardDetails';
+import JSON from './json/json';
 import { Router, Route, Link, IndexRoute, Switch } from 'react-router';
 
   
@@ -10,40 +11,46 @@ class App extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
-          data : []
+          data : [],
+          id : ''
       }
       this.changes = this.changes.bind(this);
+      
   }
   
  changes = (id) => {
-   alert(id)
+  //  alert(id)
   this.setState({
-    redirect : true
+    redirect : true,
+    id : id
   })
+  return(
+    <Detail />
+  )
 }
 
   
-  componentDidMount() {
-      fetch("http://starlord.hackerearth.com/recipe")
-      .then(response => response.json())
-      .then(datum => {
-            this.setState({
-                data : datum
-            })
-          }) 
-  }
+  // componentDidMount() {
+  //     fetch(JSON)
+  //     .then(response => response.json())
+  //     .then(datum => {
+  //           this.setState({
+  //               data : datum
+  //           })
+  //         }) 
+  // }
 
    
   render() {
     if(this.state.redirect) {
       return (
        <div>
-         <Detail />
+         <Detail  id={this.state.id} />
        </div>
       )
     }
   const cardData =
-   this.state.data.map(card =>
+   JSON.map(card =>
      <Card
       key={card["id"]} 
       id={card["id"]} 
@@ -56,9 +63,11 @@ class App extends React.Component {
       changes={this.changes} 
       />);
         return (
-          <div className="cards">
+        <div className="wrapper">
+          <div className="masonry">
                {cardData}
             </div>
+        </div>  
         )
     }
 }
