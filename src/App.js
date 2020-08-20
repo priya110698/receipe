@@ -2,7 +2,7 @@ import React , { Suspense, lazy } from 'react';
 import './App.css';
 import Card from './components/card';
 import Detail from './components/cardDetails';
-import JSON from './json/json';
+import JSON from './json';
 import { Router, Route, Link, IndexRoute, Switch } from 'react-router';
 
   
