@@ -1,6 +1,6 @@
 import React  from 'react';
 import featherheart from '../assets/icons/featherheart.png';
-import JSON from '../json/json';
+import JSON from '../json';
 import { render } from '@testing-library/react';
 
 class Detail extends React.Component {
